@@ -6,15 +6,23 @@ import (
 
 func generatePassword(password, level string) string {
 
+	// Memastikan panjang password minimal 6 karakter
+	if len(password) < 6 {
+		return "Password length should be at least 6 characters."
+	}
+
 	// Fungsi untuk mendapatkan karakter acak dari setiap jenis karakter
 	getRandomLower := func() byte {
-		return byte(rand.Intn(26) + 'a')
+		randomLower := "abcdefghijklmnopqrstuvwxyz"
+		return randomLower[rand.Intn(len(randomLower))]
 	}
 	getRandomUpper := func() byte {
-		return byte(rand.Intn(26) + 'A')
+		RandomUpper := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		return RandomUpper[rand.Intn(len(RandomUpper))]
 	}
 	getRandomDigit := func() byte {
-		return byte(rand.Intn(10) + '0')
+		RandomDigit := "0123456789"
+		return RandomDigit[rand.Intn(len(RandomDigit))]
 	}
 	getRandomSpecial := func() byte {
 		specialChars := "!@#$%^&*()-_=+[]{}|;:'\",.<>/?"
@@ -22,10 +30,10 @@ func generatePassword(password, level string) string {
 	}
 
 	// Fungsi untuk memanipulasi password sesuai level
-	manipulatePassword := func(pwd string) string {
+	manipulatePassword := func(levelPassword string) string {
 		var newPassword []byte
 
-		for i := 0; i < len(pwd); i++ {
+		for i := 0; i < len(levelPassword); i++ {
 			if level == "low" {
 				randType := rand.Intn(2)
 				if randType == 0 {
@@ -57,11 +65,6 @@ func generatePassword(password, level string) string {
 		}
 
 		return string(newPassword)
-	}
-
-	// Memastikan panjang password minimal 6 karakter
-	if len(password) < 6 {
-		return "Password length should be at least 6 characters."
 	}
 
 	// Memanipulasi password sesuai dengan level
