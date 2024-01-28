@@ -29,46 +29,38 @@ func generatePassword(password, level string) string {
 		return specialChars[rand.Intn(len(specialChars))]
 	}
 
-	// Fungsi untuk memanipulasi password sesuai level
-	manipulatePassword := func(levelPassword string) string {
-		var newPassword []byte
+	var newPassword []byte //buatkan var dgn type slice byte
 
-		for i := 0; i < len(levelPassword); i++ {
-			if level == "low" {
-				randType := rand.Intn(2)
-				if randType == 0 {
-					newPassword = append(newPassword, getRandomLower())
-				} else if randType == 1 {
-					newPassword = append(newPassword, getRandomUpper())
-				}
-			} else if level == "medium" {
-				randType := rand.Intn(3)
-				if randType == 0 {
-					newPassword = append(newPassword, getRandomLower())
-				} else if randType == 1 {
-					newPassword = append(newPassword, getRandomUpper())
-				} else if randType == 2 {
-					newPassword = append(newPassword, getRandomDigit())
-				}
-			} else if level == "strong" {
-				randType := rand.Intn(4)
-				if randType == 0 {
-					newPassword = append(newPassword, getRandomLower())
-				} else if randType == 1 {
-					newPassword = append(newPassword, getRandomUpper())
-				} else if randType == 2 {
-					newPassword = append(newPassword, getRandomDigit())
-				} else if randType == 3 {
-					newPassword = append(newPassword, getRandomSpecial())
-				}
+	for i := 0; i < len(password); i++ {
+		if level == "low" {
+			randType := rand.Intn(2)
+			if randType == 0 {
+				newPassword = append(newPassword, getRandomLower())
+			} else if randType == 1 {
+				newPassword = append(newPassword, getRandomUpper())
+			}
+		} else if level == "medium" {
+			randType := rand.Intn(3)
+			if randType == 0 {
+				newPassword = append(newPassword, getRandomLower())
+			} else if randType == 1 {
+				newPassword = append(newPassword, getRandomUpper())
+			} else if randType == 2 {
+				newPassword = append(newPassword, getRandomDigit())
+			}
+		} else if level == "strong" {
+			randType := rand.Intn(4)
+			if randType == 0 {
+				newPassword = append(newPassword, getRandomLower())
+			} else if randType == 1 {
+				newPassword = append(newPassword, getRandomUpper())
+			} else if randType == 2 {
+				newPassword = append(newPassword, getRandomDigit())
+			} else if randType == 3 {
+				newPassword = append(newPassword, getRandomSpecial())
 			}
 		}
-
-		return string(newPassword)
 	}
 
-	// Memanipulasi password sesuai dengan level
-	newPassword := manipulatePassword(password)
-
-	return newPassword
+	return string(newPassword)
 }

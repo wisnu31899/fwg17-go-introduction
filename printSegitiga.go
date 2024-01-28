@@ -1,28 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-//fix
-//output:
+// fix
+// output:
 // *********
-//  *******
-//   *****
-//    ***
-//     *
+//
+//	*******
+//	 *****
+//	  ***
+//	   *
+//
 // menggunakan loop dan condition
 func printSegitiga(n int) {
+	// Mencetak baris
 	for i := n; i >= 1; i-- {
 		// Mencetak spasi di awal setiap baris
-		for j := 0; j < n-i; j++ {
+		for j := 1; j <= n-i; j++ {
 			fmt.Print(" ")
 		}
-		// Mencetak bintang atau spasi tergantung pada kondisi
+		// Mencetak bintang
 		for k := 1; k <= 2*i-1; k++ {
-			if k%2 == 1 {
-				fmt.Print("*")
-			} else {
-				fmt.Print("*")
-			}
+			fmt.Print("*")
 		}
 		fmt.Println()
 	}
@@ -38,6 +39,47 @@ func printSegitiga(n int) {
 // 		// Mencetak bintang
 // 		for k := 1; k <= 2*i-1; k++ {
 // 			fmt.Print("*")
+// 		}
+// 		fmt.Println()
+// 	}
+// }
+// func printSegitiga(n int) {
+// 	for i := n; i >= 1; i-- {
+// 		// Mencetak spasi di awal setiap baris
+// 		for j := 1; j <= n-i; j++ {
+// 			fmt.Print(" ")
+// 		}
+// 		// Mencetak bintang
+// 		for k := 1; k <= 2*i-1; k++ {
+// 			if k%2 == 1 {
+// 				fmt.Print("k") //i jika mau segitiga mengunakan number 5-1
+// 			} else {
+// 				fmt.Print("*")
+// 			}
+// 		}
+// 		fmt.Println()
+// 	}
+// }
+
+// output:
+// 5*5*5*5*5
+//  4*4*4*4
+//   3*3*3
+//    2*2
+//     1
+// func printSegitiga(n int) {
+// 	for i := n; i >= 1; i-- {
+// 		// Mencetak spasi di awal setiap baris
+// 		for j := 0; j < n-i; j++ {
+// 			fmt.Print(" ")
+// 		}
+// 		// Mencetak bintang atau spasi tergantung pada kondisi
+// 		for k := 1; k <= 2*i-1; k++ {
+// 			if k%2 == 1 {
+// 				fmt.Print(i)
+// 			} else {
+// 				fmt.Print("*")
+// 			}
 // 		}
 // 		fmt.Println()
 // 	}
@@ -78,13 +120,15 @@ func printSegitiga(n int) {
 // 	}
 // }
 
-//output :
+// output :
 // 5 5 5 5 5
-//  4 4 4 4
-//   3 3 3
-//    2 2
-//     1
-//menggunakan loop and condition
+//
+//	4 4 4 4
+//	 3 3 3
+//	  2 2
+//	   1
+//
+// menggunakan loop and condition
 // func printSegitiga(n int) {
 // 	for i := n; i >= 1; i-- {
 // 		// Mencetak spasi di awal setiap baris
