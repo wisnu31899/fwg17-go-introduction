@@ -12,22 +12,19 @@ import (
 // 	}
 
 // 	// Fungsi untuk mendapatkan karakter acak dari setiap jenis karakter
-// 	getRandomLower := func() byte {
-// 		randomLower := "abcdefghijklmnopqrstuvwxyz"
-// 		return randomLower[rand.Intn(len(randomLower))]
-// 	}
-// 	getRandomUpper := func() byte {
-// 		RandomUpper := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-// 		return RandomUpper[rand.Intn(len(RandomUpper))]
-// 	}
-// 	getRandomDigit := func() byte {
-// 		RandomDigit := "0123456789"
-// 		return RandomDigit[rand.Intn(len(RandomDigit))]
-// 	}
-// 	getRandomSpecial := func() byte {
-// 		specialChars := "!@#$%^&*()-_=+[]{}|;:'\",.<>/?"
-// 		return specialChars[rand.Intn(len(specialChars))]
-// 	}
+// getRandomLower := func() byte {
+// 	return byte(rand.Intn(26) + 'a')
+// }
+// getRandomUpper := func() byte {
+// 	return byte(rand.Intn(26) + 'A')
+// }
+// getRandomDigit := func() byte {
+// 	return byte(rand.Intn(10) + '0')
+// }
+// getRandomSpecial := func() byte {
+// 	specialChars := "!@#$%^&*()-_=+[]{}|;:'\",.<>/?"
+// 	return specialChars[rand.Intn(len(specialChars))]
+// }
 
 // 	var newPassword []byte //buatkan var dgn type slice byte
 
