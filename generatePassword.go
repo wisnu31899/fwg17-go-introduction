@@ -86,7 +86,7 @@ func generatePassword(password, level string) string {
 		return string(specialChars[rand.Intn(len(specialChars))])
 	}
 
-	var newPassword string // ubah tipe data ke string
+	var newPassword string
 
 	for i := 0; i < len(password); i++ {
 		if level == "low" {
